@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
       .then(pruned => {
         let pruneEmbed = new Discord.RichEmbed()
         .setColor('#27ae60')
-        .setDescription(`I have just scanned ${message.guild.memberCount} and found ${pruned} inactive people who have not checked in for 7 days. These ${pruned} people will be kicked with the next use of \`^purge\`.`);
+        .setDescription(`I have just scanned ${message.guild.memberCount} people and found ${pruned} inactive people who have not checked in for 7 days. These ${pruned} people will be kicked with the next use of \`^purge\`.`);
         message.channel.send(pruneEmbed)
       .catch(console.error);
       });
