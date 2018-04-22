@@ -10,8 +10,8 @@ module.exports.run = async (bot, message, args) => {
         .setColor('#27ae60')
         .setDescription(`I have just kicked ${pruned} inactive people who have not checked in for 7 days.`);
         message.channel.send(pruneEmbed)
-      });
       .catch(console.error);
+      });
 }
 
 module.exports.help = {
