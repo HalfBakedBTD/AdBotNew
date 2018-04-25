@@ -23,7 +23,7 @@ exports.run = async (bot, message, args) => {
     }
   }
   
-  let check === `${ad[message.guild.id].desc}`;
+  let check = `${ad[message.guild.id].desc}`;
   
   if (ad[message.guild.id].desc = "") {
 		ad[message.guild.id].desc = "Description not set for this server."
