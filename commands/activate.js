@@ -5,7 +5,7 @@ function adSend(bot, message) {
 	 let adEmbed = new Discord.RichEmbed()
    .setColor('#27ae60')
    .setTitle(`${message.guild.name}:`)
-   .setDescription(`${ad[message.guild.id].desc}\n\n**------------------------------------------------**\nUser ID: \`${message.author.id}\` [CLICK HERE TO JOIN](${ad[message.guild.id].link})`);
+   .setDescription(`${ad[message.guild.id].desc}\n\n**------------------------------------------------**\nUSER ID: \`${message.author.id}\`\n**[Join: ${ad[message.guild.id].link}]**`);
    bot.channels.filter(c => c.name === 'ads').forEach(channel => channel.send(adEmbed));
  setTimeout(() => adSend(bot, message), 30*60000);
 }
@@ -32,7 +32,7 @@ exports.run = async (bot, message, args) => {
   
   message.channel.createInvite()
     .then(invite => {
-	    ad[message.guild.id].link = "https://www.discord.gg/${invite.code}"
+	    ad[message.guild.id].link = "https://discord.gg/${invite.code}"
     });
   
   let botEmbed = new Discord.RichEmbed()
