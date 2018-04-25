@@ -21,8 +21,8 @@ exports.run = async (bot, message, args) => {
   
   let botEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
-  .setTitle('<:GWlegacyBlobThumbsUp:408674890175217664> UPDATE <:GWlegacyBlobThumbsUp:408674890175217664>')
-  .setDescription(`You have now updated your description! If you have already activated ads for your server, then it will now post the updated description!**__Description:__**\n${newDesc}`);
+  .setTitle('✅ UPDATE ✅')
+  .setDescription(`You have now updated your description! If you have already activated ads for your server, then it will now post the updated description!\n\n**__Description:__**\n${newDesc}`);
   message.channel.send(botEmbed)
 }
 	      
