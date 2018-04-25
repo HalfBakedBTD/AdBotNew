@@ -4,6 +4,7 @@ const ad = require("../adsave.json");
 exports.run = async (bot, message, args) => {
   if(!ad[message.guild.id]) {
     ad[message.guild.id] = {
+      link: "",
       desc: ""
     }
   }
