@@ -23,7 +23,7 @@ exports.run = async (bot, message, args) => {
 	
 	let infoEmbed = new Discord.RichEmbed()
   .setColor('#be2edd')
-  .setDescription("**Other Commands:**\n:mailbox: **^info** - Gives various info about AdBot.\n\n:e_mail: **^invite** - Sends you and invite to add AdBot to your server.\n:pizza: **^server** - Links you to AdBot's official server.");
+  .setDescription("**Other Commands:**\n:mailbox: **^info** - Gives various info about AdBot.\n:e_mail: **^invite** - Sends you and invite to add AdBot to your server.\n:pizza: **^server** - Links you to AdBot's official server.");
 	message.author.send(infoEmbed)
 	
 	let linkEmbed = new Discord.RichEmbed()
