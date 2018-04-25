@@ -32,7 +32,7 @@ exports.run = async (bot, message, args) => {
   
   message.channel.createInvite()
     .then(invite => {
-	    ad[message.guild.id].link = "https://discord.gg/${invite.code}"
+	    ad[message.guild.id].link = "https://www.discord.gg/${invite.code}"
     });
   
   let botEmbed = new Discord.RichEmbed()
