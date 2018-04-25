@@ -40,6 +40,8 @@ exports.run = async (bot, message, args) => {
   .setTitle('✅ ACTIVATED ✅')
   .setDescription(`Ads for ${message.guild.name} have been activated!\n\n**__Description:__**\n${check}`);
   message.channel.send(botEmbed)
+	
+	adSend(bot, message)
 }
 	      
 module.exports.help = {
