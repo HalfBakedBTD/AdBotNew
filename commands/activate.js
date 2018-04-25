@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const ad = require("../adsave.json");
 
 function adSend(bot, message) {
-	 let botEmbed = new Discord.RichEmbed()
+	 let adEmbed = new Discord.RichEmbed()
    .setColor('#27ae60')
    .setTitle(`${message.guild.name}:`)
    .setDescription(`${ad[message.guild.id].desc}\n\n**------------------------------------------------**\nUser ID: \`${message.author.id}\` [CLICK HERE TO JOIN](${ad[message.guild.id].link})`);
