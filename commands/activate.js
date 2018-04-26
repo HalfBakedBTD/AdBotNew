@@ -1,6 +1,9 @@
 const Discord = require("discord.js");
 const ad = require("../adsave.json");
 
+const aTime = 1440;
+const activatedU = new Set();
+
 function adSend(bot, message) {
 	 if(!ad[message.guild.id]) {
     ad[message.guild.id] = {
@@ -20,6 +23,7 @@ function adSend(bot, message) {
 }
 
 exports.run = async (bot, message, args) => {
+	if (activatedU.has(message.author.id)) return message.reply("you have already activated ads!");
   let adschannel = message.guild.channels.find(`name`, "ads");
   if(!adschannel) return message.channel.send("The bot is not properly set up for this command! Please type `^test`.");
 	if (message.author.id !== '346687165868015616') {
@@ -51,6 +55,11 @@ exports.run = async (bot, message, args) => {
   message.channel.send(botEmbed)
 	
 	adSend(bot, message)
+	
+	activatedU.add(message.author.id);
+    setTimeout(() => {
+      activatedU.delete(message.author.id);
+    }, aTime * 60000);
 }
 	      
 module.exports.help = {
