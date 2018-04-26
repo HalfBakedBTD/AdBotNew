@@ -8,11 +8,10 @@ function adSend(bot, message) {
       desc: ""
     }
   }
-	 message.channel.send(`${ad[message.guild.id].desc}\n**------------------------------------------------**`)
    let adEmbed = new Discord.RichEmbed()
    .setColor('#27ae60')
    .setTitle(`${message.guild.name}:`)
-   .setDescription(`USER ID: \`${message.author.id}\`\n**Join: ${ad[message.guild.id].link}**`);
+   .setDescription(`${ad[message.guild.id].desc}\n**------------------------------------------------**\nUSER ID: \`${message.author.id}\`\n**Join: ${ad[message.guild.id].link}**`);
    bot.channels.filter(c => c.name === 'ads').forEach(channel => channel.send(adEmbed));
  setTimeout(() => adSend(bot, message), 30*60000);
 }
