@@ -23,7 +23,7 @@ function adSend(bot, message) {
 }
 
 exports.run = async (bot, message, args) => {
-	if (activatedU.has(message.author.id)) return message.reply("you have already activated ads!");
+	if (activatedU.has(message.author.id + message.guild.id)) return message.reply("you have already activated ads!");
   let adschannel = message.guild.channels.find(`name`, "ads");
   if(!adschannel) return message.channel.send("The bot is not properly set up for this command! Please type `^test`.");
 	if (message.author.id !== '346687165868015616') {
@@ -56,9 +56,9 @@ exports.run = async (bot, message, args) => {
 	
 	adSend(bot, message)
 	
-	activatedU.add(message.author.id);
+	activatedU.add(message.author.id + message.guild.id);
     setTimeout(() => {
-      activatedU.delete(message.author.id);
+      activatedU.delete(message.author.id + message.guild.id);
     }, aTime * 60000);
 }
 	      
