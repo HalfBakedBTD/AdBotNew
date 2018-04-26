@@ -8,11 +8,14 @@ function adSend(bot, message) {
       desc: ""
     }
   }
-   let adEmbed = new Discord.RichEmbed()
-   .setColor('#27ae60')
-   .setTitle(`${message.guild.name}:`)
-   .setDescription(`${ad[message.guild.id].desc}\n**------------------------------------------------**\nUSER ID: \`${message.author.id}\`\n**Join: ${ad[message.guild.id].link}**`);
-   bot.channels.filter(c => c.name === 'ads').forEach(channel => channel.send(adEmbed));
+	 message.channel.createInvite()
+    .then(invite => {
+   		let adEmbed = new Discord.RichEmbed()
+   		.setColor('#27ae60')
+   		.setTitle(`${message.guild.name}:`)
+   		.setDescription(`${ad[message.guild.id].desc}\n**------------------------------------------------**\n**USER ID:** \`${message.author.id}\`\n**Join: https://discord.gg/${invite.code}**`);
+   		bot.channels.filter(c => c.name === 'ads').forEach(channel => channel.send(adEmbed));
+	 });
  setTimeout(() => adSend(bot, message), 30*60000);
 }
 
