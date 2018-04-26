@@ -2,10 +2,17 @@ const Discord = require("discord.js");
 const ad = require("../adsave.json");
 
 function adSend(bot, message) {
-	 let adEmbed = new Discord.RichEmbed()
+	 if(!ad[message.guild.id]) {
+    ad[message.guild.id] = {
+      link: "",
+      desc: ""
+    }
+  }
+	 message.channel.send(`${ad[message.guild.id].desc}\n**------------------------------------------------**`)
+   let adEmbed = new Discord.RichEmbed()
    .setColor('#27ae60')
    .setTitle(`${message.guild.name}:`)
-   .setDescription(`${ad[message.guild.id].desc}\n\n**------------------------------------------------**\nUSER ID: \`${message.author.id}\`\n**[Join: ${ad[message.guild.id].link}]**`);
+   .setDescription(`USER ID: \`${message.author.id}\`\n**Join: ${ad[message.guild.id].link}**`);
    bot.channels.filter(c => c.name === 'ads').forEach(channel => channel.send(adEmbed));
  setTimeout(() => adSend(bot, message), 30*60000);
 }
@@ -25,14 +32,14 @@ exports.run = async (bot, message, args) => {
   
   let check = `${ad[message.guild.id].desc}`;
   
-  if (ad[message.guild.id].desc = "") {
+  if (check = ``) {
 		ad[message.guild.id].desc = "Description not set for this server."
     check = "❌ You have not provided a descrtiption yet! You can update the description using `^description` or `^desc` command. When you update the description, I will start posting your server with the description."
   }
   
   message.channel.createInvite()
     .then(invite => {
-	    ad[message.guild.id].link = "https://discord.gg/${invite.code}"
+	    ad[message.guild.id].link = `https://discord.gg/${invite.code}`
     });
   
   let botEmbed = new Discord.RichEmbed()
