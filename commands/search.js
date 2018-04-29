@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     
     message.channel.send(`I am finding and messaging you servers with ${searchTerm} in thier name.`)
     
-    message.author.send(matches.map(u => u.tag));
+    message.author.send(matches.map(g => g.name));
 
 }
     
