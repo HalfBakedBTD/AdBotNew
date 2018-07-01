@@ -28,7 +28,7 @@ exports.run = async (bot, message, args) => {
 	
 	let linkEmbed = new Discord.RichEmbed()
   .setColor('#6ab04c')
-	.setDescription("**Helpful Links:**\n[Invite](https://discordapp.com/oauth2/authorize?client_id=421744026740457474&permissions=8&scope=bot) | [Discord](https://discord.gg/REkAA2X) | [Upvote](https://discordbots.org/bot/421744026740457474)");
+	.setDescription("**Helpful Links:**\n[Invite](https://discordapp.com/oauth2/authorize?client_id=421744026740457474&permissions=8&scope=bot) | [Discord](https://discord.gg/REkAA2X) | [Upvote](https://www.bing.com/images/search?q=comming+soon&FORM=HDRSC2)");
 	message.author.send(linkEmbed)
 }
 	      
