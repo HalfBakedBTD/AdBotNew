@@ -18,7 +18,7 @@ exports.run = async (bot, message, args) => {
 	
 	let adEmbed = new Discord.RichEmbed()
   .setColor('#eb4d4b')
-  .setDescription("**__Main Commands:__**\n:arrow_heading_up: **^activate** - Bumps your server to the top of the advertising slot continuasly.\n**^desc** - Lets you make a description for your server. (`^desc` or `^description`)\n**^search** - lets you search servers that I am in by name.");
+  .setDescription("**__Main Commands:__**\n:arrow_heading_up: **^activate** - Bumps your server to the top of the advertising slot continuasly.\n:newspaper: **^desc** - Lets you make a description for your server. (`^desc` or `^description`)\n:mag_right: **^search** - lets you search servers that I am in by name.");
 	message.author.send(adEmbed)
 	
 	let infoEmbed = new Discord.RichEmbed()
