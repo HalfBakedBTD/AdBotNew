@@ -6,11 +6,13 @@ module.exports.run = async (bot, message, args) => {
     
     message.channel.send(`I am finding and direct messaging you servers with ${searchTerm} in thier name.`)
     
-    bot.guilds.filter(g => g.name.includes(`${searchTerm}`)).forEach(guild => {
-        message.channel.createInvite()
-      .then(invite => {
-        message.author.send(`**${guild.name}: https://discord.gg/${invite.code}**`);
-	  });
+    bot.guilds.filter(g => g.id !== 'sgkmsrjgnrkkskf').forEach(guild => {
+	    if (guild.name.toLowerCase().includes(`${searchTerm}`)) {
+        	message.channel.createInvite()
+      			.then(invite => {
+        			message.author.send(`**${guild.name}: https://discord.gg/${invite.code}**`);
+	  		});
+	    }
     });
 }
     
