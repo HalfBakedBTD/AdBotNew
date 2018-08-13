@@ -28,6 +28,10 @@ bot.on("ready", async () => {
   bot.user.setGame(`^help | On ${bot.guilds.size} servers.`);
 });
 
+bot.on('guildCreate', guild => {
+  bot.user.setGame(`^help | On ${bot.guilds.size} servers.`);
+});
+
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
