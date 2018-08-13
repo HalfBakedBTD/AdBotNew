@@ -2,6 +2,9 @@ const Discord = require("discord.js");
 const ad = require("../adsave.json");
 
 exports.run = async (bot, message, args) => {
+	if (message.author.id !== '346687165868015616') {
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("No. Why would I do this for you? I have a **Admin only** policy.");
+	}
   if(!ad[message.guild.id]) {
     ad[message.guild.id] = {
       link: "",
