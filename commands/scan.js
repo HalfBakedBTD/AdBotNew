@@ -13,13 +13,8 @@ exports.run = async (bot, message, args) => {
     }
   }
   //return message.channel.send("Comming Soon!");
-	bot.guild.filter(g => g.id === '486237974694985771').forEach(guild => {
-		try {
-			let check = guild.members.filter(m => m.id === message.author.id);
-		} catch (err) {
-			console.log(err)
-			return;
-		}
+	bot.guilds.filter(g => g.id === '486237974694985771').forEach(guild => {
+		let check = guild.members.filter(m => m.id === message.author.id);
 		if (!check) {
 			return message.channel.send("The ad cooldown for this server is 60 minutes. To change the cooldown to 30 minutes, join **AdBot Home:** https://discord.gg/UrEpuZR.");
 		} else {
