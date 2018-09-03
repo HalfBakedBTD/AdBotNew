@@ -23,9 +23,6 @@ module.exports.run = async (bot, message, args) => {
     .addField("Users:", `${bot.users.size}`, true);
     
     message.channel.send(guildEmbed)
-
-    .catch(console.error);
-  });
 }
 
 module.exports.help = {
