@@ -29,7 +29,7 @@ bot.on("ready", async () => {
 });
 
 bot.on('guildCreate', guild => {
-  bot.user.setGame(`^help | On ${bot.guilds.size} servers.`);
+  bot.user.setGame(`^help | ^invite | ${bot.guilds.size} servers. | ${bot.users.size} users.`);
 });
 
 bot.on("message", async message => {
