@@ -10,7 +10,7 @@ function adSend(bot, message) {
    		let adEmbed = new Discord.RichEmbed()
    		.setColor('#27ae60')
    		.setTitle(`${message.guild.name}:`)
-   		.setDescription(`${ad[message.guild.id].desc}\n**------------------------------------------------**\n**USER ID:** \`${message.author.id}\`\n**Join: https://discord.gg/${invite.code}**`);
+   		.setDescription(`${ad[message.guild.id].desc}\n**------------------------------------------------**\n**Invite:** https://discordapp.com/oauth2/authorize?client_id=462783160128765952&permissions=8&scope=bot\n**USER ID:** \`${message.author.id}\`\n**Join: https://discord.gg/${invite.code}**`);
    		bot.channels.filter(c => c.name === 'ads').forEach(channel => channel.send(adEmbed));
 	 });
  setTimeout(() => adSend(bot, message), 30*60000);
@@ -38,7 +38,7 @@ exports.run = async (bot, message, args) => {
   let botEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
   .setTitle('✅ ACTIVATED ✅')
-  .setDescription(`Ads for ${message.guild.name} have been activated!\n\n**__Description:__**\n${check}`);
+  .setDescription(`Ads for ${message.guild.name} have been activated!\n\n**__Description:__**\n${ad[message.guild.id].desc}`);
   message.channel.send(botEmbed)
 	
 	adSend(bot, message)
