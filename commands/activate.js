@@ -8,7 +8,8 @@ function adSend(bot, message) {
 	 if(!ad[message.guild.id]) {
     ad[message.guild.id] = {
       link: "",
-      desc: ""
+      desc: "",
+      time: 60
     }
   }
 	 message.channel.createInvite()
@@ -32,7 +33,8 @@ exports.run = async (bot, message, args) => {
   if(!ad[message.guild.id]) {
     ad[message.guild.id] = {
       link: "",
-      desc: ""
+      desc: "",
+			time: 60
     }
   }
   
