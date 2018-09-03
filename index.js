@@ -25,7 +25,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setGame(`^help | On ${bot.guilds.size} servers.`);
+  bot.user.setGame(`^help | ^invite | ${bot.guilds.size} servers. | ${bot.users.size} users.`);
 });
 
 bot.on('guildCreate', guild => {
