@@ -16,6 +16,10 @@ exports.run = async (bot, message, args) => {
     message.reply("you can't tag people in your description!")
     return;
   }
+  if (message.content.toLowerCase().includes('https://') && message.content.toLowerCase().includes('www.')) {
+    message.reply("you can't tag people in your description!")
+    return;
+  }
   ad[message.guild.id].desc = `${newDesc}`
   
   let botEmbed = new Discord.RichEmbed()
