@@ -10,7 +10,7 @@ exports.run = async (bot, message, args) => {
     ad[message.guild.id] = {
       link: "",
       desc: "",
-	    time: 60
+      time: 60
     }
   }
   const newDesc = args.join(" ");
