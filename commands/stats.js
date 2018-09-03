@@ -17,9 +17,9 @@ module.exports.run = async (bot, message, args) => {
     .setColor('#27ae60')
     .addField("Creator:", `<@284137818895417344>`, true)
     .addField("Creator ID:", `284137818895417344`, true)
-    .addField("Text Channels:", `${text_channels}`, true)
+    .addField("Text Channels:", `${text_channels}`)
     .addField("Voice Channels:", `${voice_channels}`, true)
-    .addField("Servers:", `${bot.guilds.size}`, true)
+    .addField("Servers:", `${bot.guilds.size}`)
     .addField("Users:", `${bot.users.size}`, true);
     
     message.channel.send(guildEmbed)
