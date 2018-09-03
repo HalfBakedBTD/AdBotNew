@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const ad = require("../adsave.json");
 
 exports.run = async (bot, message, args) => {
   if (message.author.id !== '346687165868015616') {
