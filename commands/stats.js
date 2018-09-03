@@ -1,12 +1,14 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    var text_channels = 0, voice_channels = 0;
+    var text_channels = 0, voice_channels = 0, total_channels = 0;
     bot.channels.filter(c => c.id !== "Frog Turd").forEach(channel => {
       if (channel.type == 'text') {
         text_channels += 1;
+        total_channels += 1;
       } else if (channel.type == 'voice') {
         voice_channels += 1;
+        total_channels += 1;
       }
     });
     
@@ -17,9 +19,11 @@ module.exports.run = async (bot, message, args) => {
     .setColor('#27ae60')
     .addField("Creator:", `<@284137818895417344>`, true)
     .addField("Creator ID:", `284137818895417344`, true)
-    .addField("Text Channels:", `${text_channels}`)
+    .addField("Creator Tag:", `HalfBakedGaming#4048`, true)
+    .addField("Text Channels:", `${text_channels}`, true)
     .addField("Voice Channels:", `${voice_channels}`, true)
-    .addField("Servers:", `${bot.guilds.size}`)
+    .addField("Total Channels:", `${total_channels}`, true)
+    .addField("Servers:", `${bot.guilds.size}`, true)
     .addField("Users:", `${bot.users.size}`, true);
     
     message.channel.send(guildEmbed)
