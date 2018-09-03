@@ -23,7 +23,7 @@ exports.run = async (bot, message, args) => {
 	if (message.author.id !== '346687165868015616') {
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("No. Why would I do this for you? I have a **Admin only** policy.");
 	}
-  if(!ad[message.guild.id]) return message.channel.send("Please use commands `^desc` to make a description or `^scan` to create your guild file. If you are in AdBot Home: https://discord.gg/UrEpuZR and use the `^scan` command, you ad will be posted every 30 minutes instead of every hour!");
+  if(!ad[message.guild.id]) return message.channel.send("Please use the command `^scan` to create your server file and cooldown before using this command. If you are in **AdBot Home:** https://discord.gg/UrEpuZR and use the `^scan` command, you ad will be posted every 30 minutes instead of every hour!");
   
   let check = `${ad[message.guild.id].desc}`;
   
