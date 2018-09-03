@@ -24,7 +24,8 @@ module.exports.run = async (bot, message, args) => {
     .addField("Voice Channels:", `${voice_channels}`, true)
     .addField("Total Channels:", `${total_channels}`, true)
     .addField("Servers:", `${bot.guilds.size}`, true)
-    .addField("Users:", `${bot.users.size}`, true);
+    .addField("Users:", `${bot.users.size}`, true)
+    .addField("Version:", `4.8.1`, true);
     
     message.channel.send(guildEmbed)
 }
