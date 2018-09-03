@@ -23,13 +23,11 @@ exports.run = async (bot, message, args) => {
 	if (message.author.id !== '346687165868015616') {
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("No. Why would I do this for you? I have a **Admin only** policy.");
 	}
-  if(!ad[message.guild.id]) return message.channel.send("Please use the command `^scan` to create your server file and cooldown before using this command. If you are in **AdBot Home:** https://discord.gg/UrEpuZR and use the `^scan` command, you ad will be posted every 30 minutes instead of every hour!");
+  if(!ad[message.guild.id]) return message.channel.send("Please use the command `^scan` to create your server file!");
   
-  let check = `${ad[message.guild.id].desc}`;
-  
-  if (check = ``) {
-		ad[message.guild.id].desc = "Description not set for this server."
-    check = "❌ You have not provided a descrtiption yet! You can update the description using `^description` or `^desc` command. When you update the description, I will start posting your server with the description."
+  if (ad[message.guild.id].desc = '') {
+	ad[message.guild.id].desc = "Description not set for this server."
+    message.channel.send = "❌ You have not provided a description yet! To set one use `^description` or `^desc` commands. (`OPTIONAL`)"
   }
   
   message.channel.createInvite()
