@@ -17,7 +17,7 @@ exports.run = async (bot, message, args) => {
     return;
   }
   if (message.content.toLowerCase().includes('https://') && message.content.toLowerCase().includes('www.')) {
-    message.reply("you can't tag people in your description!")
+    message.reply("you can't put links in your description!")
     return;
   }
   ad[message.guild.id].desc = `${newDesc}`
