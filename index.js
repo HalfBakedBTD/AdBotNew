@@ -26,7 +26,7 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
   bot.channel.filter(c => c.name === 'ads').forEach(channel => {
     channel.send(`I have restarted, please activate ads again.`);
-  }
+  });
 
   bot.user.setGame(`^help | ^invite`);
 });
