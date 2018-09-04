@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.channel.filter(c => c.name === 'ads').forEach(channel => {
+  bot.channels.filter(c => c.name === 'ads').forEach(channel => {
     channel.send(`I have restarted, please activate ads again.`);
   });
 
