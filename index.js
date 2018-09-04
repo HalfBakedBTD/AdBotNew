@@ -4,6 +4,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
+return;
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
@@ -24,6 +25,9 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
+  bot.channel.filter(c => c.name === 'ads').forEach(channel => {
+    channel.send(`I have restarted, please activate ads again.`);
+  }
 
   bot.user.setGame(`^help | ^invite`);
 });
