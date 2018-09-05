@@ -20,12 +20,15 @@ exports.run = async (bot, message, args) => {
     message.reply("you can't put links in your description!")
     return;
   }
+  If(newDesc.length < 800) {
+	  return message.channel.send("You must be a donator of AdBot to use more than 800 charecters.");
+  }
   ad[message.guild.id].desc = `${newDesc}`
   
   let botEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
   .setTitle('✅ UPDATE ✅')
-  .setDescription(`You have now updated your description! If you have already activated ads for your server, then it will now post the updated description!\n\n**__Description:__**\n${newDesc}`);
+  .setDescription(`You have now updated your description! If you have already activated ads for your server, then it will now post the updated description!`);
   message.channel.send(botEmbed)
 }
 	      
