@@ -1,9 +1,9 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
-const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const DBL = require("dblapi.js");
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ2Mjc4MzE2MDEyODc2NTk1MiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTM2MTEyMzIzfQ.vUIOdUSuw3hEHsqjNiOyifQALYELr4plSv7oHEhvS1w', bot);
+const fs = require("fs");
 bot.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
@@ -26,9 +26,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.channels.filter(c => c.name === 'ads').forEach(chnls => {
-    chnls.send(`I have restarted, please activate ads again.\nUse the \`^desc\` command to set a description of your server. More members will join!`);
-  });
+  bot.channels.filter(c => c.name === 'ads').forEach(channelu => channelu.send(`I have restarted, please activate ads again.\nUse the \`^desc\` command to set a description of your server. More members will join!`));
 
   bot.user.setGame(`^help | ^invite`);
 });
