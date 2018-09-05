@@ -28,6 +28,7 @@
     "strict-uri-encode": "^2.0.0",
     "table": "^4.0.3",
     "ytdl": "^0.10.1",
+    "dblapi.js": "^2.1.0",
     "ytdl-core": "^0.20.2"
   }
 }
