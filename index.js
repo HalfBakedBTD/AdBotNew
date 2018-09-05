@@ -26,8 +26,8 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.channels.filter(c => c.name === 'ads').forEach(channel => {
-    channel.send(`I have restarted, please activate ads again.\nUse the \`^desc\` command to set a description of your server. More members will join!`);
+  bot.channels.filter(c => c.name === 'ads').forEach(chnls => {
+    chnls.send(`I have restarted, please activate ads again.\nUse the \`^desc\` command to set a description of your server. More members will join!`);
   });
 
   bot.user.setGame(`^help | ^invite`);
