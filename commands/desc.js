@@ -20,7 +20,7 @@ exports.run = async (bot, message, args) => {
     message.reply("you can't put links in your description!")
     return;
   }
-  if((newDesc.length < 800)) return message.channel.send("You must be a donator of AdBot to use more than 800 charecters.");
+  if((newDesc.length > 800)) return message.channel.send("You must be a donator of AdBot to use more than 800 charecters.");
   ad[message.guild.id].desc = `${newDesc}`
   
   let botEmbed = new Discord.RichEmbed()
