@@ -11,7 +11,11 @@ function adSend(bot, message) {
    		.setColor('#27ae60')
    		.setTitle(`${message.guild.name}:`)
    		.setDescription(`${ad[message.guild.id].desc}\n**------------------------------------------------**\n**Invite:** https://discordapp.com/oauth2/authorize?client_id=462783160128765952&permissions=8&scope=bot\n**USER ID:** \`${message.author.id}\`\n**Join: https://discord.gg/${invite.code}**`);
-   		bot.channels.filter(c => c.name === 'ads').forEach(channel => channel.send(adEmbed));
+   		bot.channels.filter(c => c.name === 'ads').forEach(channel => {
+			if (channel.type == 'text') {
+				channel.send(adEmbed);
+			}
+		});
 	 });
  setTimeout(() => adSend(bot, message), 30*60000);
 }
