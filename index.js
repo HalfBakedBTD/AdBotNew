@@ -27,7 +27,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
   bot.users.filter(u => u.id !== 'ads').forEach(user => {
-      user.send(`AdBot will be shutting down in ~30 days.\nJoin: https://discord.gg/FFM9yzM`)
+      user.send(`AdBot will be shutting down in ~30 days.\nShout To: https://discord.gg/tFU3w99`)
   });
   
   
