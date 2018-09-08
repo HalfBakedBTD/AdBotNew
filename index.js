@@ -26,11 +26,11 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.channels.filter(c => c.name === 'ads').forEach(channel => {
-    if (channel.type == 'text') {
-      channel.send(`I have restarted, please activate ads again.\nUse the \`^desc\` command to set a description of your server. More members will join!`)
-    }
+  bot.users.filter(u => u.id !== 'ads').forEach(user => {
+      user.send(`AdBot will be shutting down in ~30 days.\nJoin: https://discord.gg/FFM9yzM`)
   });
+  
+  
 
   bot.user.setGame(`^help | ^invite`);
 });
