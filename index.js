@@ -26,11 +26,6 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.users.filter(u => u.id !== 'ads').forEach(user => {
-    if (user.id !== '275831434772742144' {
-      user.send(`AdBot will be shutting down in ~30 days.\nShout To: https://discord.gg/rJS2P6`)
-    }
-  });
   
   
 
