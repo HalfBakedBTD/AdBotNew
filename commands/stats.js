@@ -17,15 +17,15 @@ module.exports.run = async (bot, message, args) => {
     let guildEmbed = new Discord.RichEmbed()
     .setTitle("Server Information.")
     .setColor('#27ae60')
-    .addField("Creator:", `<@284137818895417344>`, true)
-    .addField("Creator ID:", `284137818895417344`, true)
-    .addField("Creator Tag:", `HalfBakedGaming#4048`, true)
+    .addField("Creator:", `<@487707042224799757>`, true)
+    .addField("Creator ID:", `487707042224799757`, true)
+    .addField("Creator Tag:", `HalfBakedGaming#6331`, true)
     .addField("Text Channels:", `${text_channels}`, true)
     .addField("Voice Channels:", `${voice_channels}`, true)
     .addField("Total Channels:", `${total_channels}`, true)
     .addField("Servers:", `${bot.guilds.size}`, true)
     .addField("Users:", `${bot.users.size}`, true)
-    .addField("Version:", `4.8.1`, true);
+    .addField("Version:", `1.0 Revived`, true);
     
     message.channel.send(guildEmbed)
 }
