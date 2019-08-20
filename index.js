@@ -26,7 +26,11 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  
+  bot.channels.filter(c => c.name === 'ads').forEach(channel => {
+			if (channel.type == 'text') {
+				channel.send("❗ AdBot had just restarted. Time to ressend those server messages!");
+		  }
+		});
   
 
   bot.user.setGame(`^help | ^invite`);
